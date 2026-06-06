@@ -48,7 +48,9 @@ Statistical modeling: Pearson correlation across overall and per-genre subsets. 
 Visualization: Altair faceted scatterplot comparing domestic vs international revenue share side by side, colour-encoded by genre.
 I also contributed to data cleaning and schema design shared across the group.
 
-Repository Structure
+## Repository Structure
+
+```
 /
 ├── README.md
 ├── data_clean/
