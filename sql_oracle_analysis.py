@@ -7,11 +7,11 @@ from scipy.stats import pearsonr
 import statsmodels.formula.api as smf
 
 
-OUTPUT_DIR = Path("phase3_outputs")
+OUTPUT_DIR = Path("outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-ORACLE_USERNAME = "ora_ansh1304"
-ORACLE_PASSWORD = "a27811678"
+ORACLE_USERNAME = "..."
+ORACLE_PASSWORD = "..."
 
 FIG_DPI = 300
 
