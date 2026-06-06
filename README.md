@@ -1,18 +1,21 @@
 ## Reddit vs Box Office: SQL and MongoDB Analysis
 Multi-database analysis investigating whether Reddit movie discussion frequency predicts international vs domestic box office revenue share, with cross-database validation across Oracle SQL and MongoDB.
 
-This is a fork of a group academic project (CPSC 368, UBC). I led the end-to-end analysis for Research Question 1 — including Oracle SQL pipeline design, cross-database debugging (SQL vs MongoDB), and statistical modeling. Full project reports are included for context.
+This is a fork of a group academic project (CPSC 368, UBC). I led the end-to-end analysis for Research Question 1, including Oracle SQL pipeline design, cross-database debugging (SQL vs MongoDB), and statistical modeling. Full project reports are included for context.
 
 
 ## Core Finding
 Reddit recommendation frequency does not predict international vs domestic revenue share. Across ~448 movies in horror, action, and comedy genres, the overall Pearson r = 0.03. Genre-level correlations were equally negligible: comedy (r = 0.12), action (r = -0.07), horror (r = 0.006). A multiple linear regression with genre interaction terms produced R² = 0.13, indicating the model explains little variance. The hypothesis that horror would show the strongest signal was not supported.
 
+![RQ1: Reddit Recommendations vs Revenue Share](outputs/rq1_scatter.png)
 
 ## Research Questions & Results
 RQ1 (my analysis): Does Reddit recommendation frequency predict international vs domestic revenue share?
 Reddit discussion volume has no meaningful relationship with how revenue splits internationally vs domestically. See findings above.
+
 RQ2: How do IMDb ratings and Reddit discussion jointly relate to box office success?
 IMDb rating alone: R² = 0.205. Reddit discussion count alone: R² = 0.220. Combined multiple regression: R² = 0.404. The two metrics appear to capture complementary dimensions of a film's commercial profile.
+
 RQ3: How do Reddit upvotes vary with movie duration across genres?
 Upvote patterns are genre-dependent and inconsistent. Action films trend upward with duration until 160-179 minutes, then drop sharply. Comedy peaks at mid and very long durations. Horror shows no discernible trend.
 
@@ -66,12 +69,13 @@ I also contributed to data cleaning and schema design shared across the group.
 ├── rq1_mongodb_regression.ipynb    # MongoDB pipeline, OLS regression, Pearson correlation
 └── sql_oracle_analysis.py
 
+```
 ## Limitations
 
-Data is limited to English-language films from 2010-2018 in three genres
-Reddit data reflects 2022 discussions only, not discussion at time of release
-Reddit user base may not be representative of general moviegoing audiences
-Box Office Mojo coverage is incomplete; not all IMDb titles have revenue data
+* Data is limited to English-language films from 2010-2018 in three genres
+* Reddit data reflects 2022 discussions only, not discussion at time of release
+* Reddit user base may not be representative of general moviegoing audiences
+* Box Office Mojo coverage is incomplete; not all IMDb titles have revenue data
 
 
 ## Reports
